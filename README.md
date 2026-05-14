@@ -1,22 +1,30 @@
-# alphabet opendata
+# alphabet
 
-- [alphabet.csv](alphabet.csv)
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
 
-## license
+## Features
+- Provides a CSV file containing the English alphabet and their Japanese pronunciations.
 
-- CC0 (PUBLIC DOMAIN)
+## Data
+The `alphabet.csv` file contains the following data:
 
-## usage
+- `alphabet`: The uppercase English alphabet (A-Z)
+- `alphabet_low`: The lowercase English alphabet (a-z)
+- `alphabet_jp`: The Japanese pronunciation of each English letter
+
+## Usage
 
 ```js
 import { CSV } from "https://js.sabae.cc/CSV.js";
 
 const data = await CSV.fetchJSON("https://code4fukui.github.io/alphabet/alphabet.csv");
 
-// アルファベット大文字全部 26文字
+// Get the full uppercase English alphabet
 console.log(data.map(i => i.alphabet).join(""));
 
-// アルファベット読み全部
+// Get the full Japanese pronunciations of the alphabet
 console.log(data.map(i => i.alphabet_jp).join(""));
 ```
 
+## License
+This project is released into the public domain under the [CC0 (PUBLIC DOMAIN)](https://creativecommons.org/publicdomain/zero/1.0/) license.
